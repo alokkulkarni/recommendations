@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "Category",
+  "namespace": "com.example.flink",
+  "fields": [
+    { "name": "category", "type": "string" },
+    { "name": "merchantName", "type": "string" },
+    { "name":  "merchantCode", "type":  "string"}
+  ]
+}

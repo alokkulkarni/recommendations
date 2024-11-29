@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "com.alok.kafka.avro.model",
+  "fields": [
+    { "name": "transactionId", "type": "string" },
+    { "name": "customerId", "type": "string" },
+    { "name": "merchantCode", "type": "string" },
+    {"name": "transactionDesc", "type": "string"},
+    { "name": "amount", "type": "double" },
+    { "name": "amountType", "type": "string" },
+    { "name": "timestamp", "type": "long", "logicalType": "timestamp-millis"}
+  ]
+}

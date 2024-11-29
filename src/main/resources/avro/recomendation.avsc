@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "Recommendation",
+  "namespace": "com.example",
+  "fields": [
+    { "name": "customerId", "type": "string" },
+    { "name": "category", "type": "string" },
+    { "name": "discount", "type": "string" },
+    { "name": "contentId", "type": "string" },
+    { "name": "timestamp", "type": "string" }
+  ]
+}

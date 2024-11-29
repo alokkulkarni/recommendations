@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "Budget",
+  "namespace": "com.example.flink",
+  "fields": [
+    { "name": "customerId", "type": "string" },
+    { "name": "category", "type": "string" },
+    { "name": "monthlyBudget", "type": "double" }
+  ]
+}

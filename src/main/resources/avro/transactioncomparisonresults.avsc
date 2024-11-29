@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "TransactionComparisonResult",
+  "namespace": "com.example.flink",
+  "fields": [
+    { "name": "transactionId", "type": "string" },
+    { "name": "customerId", "type": "string" },
+    { "name": "category", "type": "string" },
+    { "name": "amount", "type": "double" },
+    { "name": "budget", "type": "double" },
+    { "name": "status", "type": "string" }
+  ]
+}
