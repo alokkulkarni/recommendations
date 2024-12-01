@@ -8,18 +8,19 @@ public class BudgetComparison {
     private int year;
     private double spentAmount;
     private double budget;
+    private double actualMonthlyBudget;
     private String flag; // Values: "OVERSPENT", "UNDERSPENT"
 
     public BudgetComparison() {}
 
-    public BudgetComparison(String customerId, String category, int month, int year,
-                            double spentAmount, double budget, String flag) {
+    public BudgetComparison(String customerId, String category, int month, int year, double spentAmount, double budget, double actualMonthlyBudget, String flag) {
         this.customerId = customerId;
         this.category = category;
         this.month = month;
         this.year = year;
         this.spentAmount = spentAmount;
         this.budget = budget;
+        this.actualMonthlyBudget = actualMonthlyBudget;
         this.flag = flag;
     }
 
@@ -69,6 +70,14 @@ public class BudgetComparison {
 
     public void setBudget(double budget) {
         this.budget = budget;
+    }
+
+    public double getActualMonthlyBudget() {
+        return actualMonthlyBudget;
+    }
+
+    public void setActualMonthlyBudget(double actualMonthlyBudget) {
+        this.actualMonthlyBudget = actualMonthlyBudget;
     }
 
     public String getFlag() {

@@ -69,9 +69,12 @@ public class PostgresUtils {
                 Constants.POSTGRES_URL, Constants.POSTGRES_USER, Constants.POSTGRES_PASSWORD)) {
 
             PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO budget_comparisons (customer_id, category, month, year, spent_amount, budget, flag) " +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?)" +
-                            "ON CONFLICT (customer_id, category, month, year) DO UPDATE SET spent_amount = EXCLUDED.spent_amount, budget = EXCLUDED.budget, flag = EXCLUDED.flag"
+                    "INSERT INTO budget_comparisons (customer_id, category, month, year, spent_amount, budget, actual_monthly_budget, flag) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)" +
+                            "ON CONFLICT (customer_id, category, month, year) " +
+                            "DO UPDATE SET spent_amount = EXCLUDED.spent_amount, " +
+                            "budget = EXCLUDED.budget, actual_monthly_budget = EXCLUDED.actual_monthly_budget, " +
+                            "flag = EXCLUDED.flag"
             );
             statement.setString(1, comparison.getCustomerId());
             statement.setString(2, comparison.getCategory());
@@ -79,7 +82,8 @@ public class PostgresUtils {
             statement.setInt(4, comparison.getYear());
             statement.setDouble(5, comparison.getSpentAmount());
             statement.setDouble(6, comparison.getBudget());
-            statement.setString(7, comparison.getFlag());
+            statement.setDouble(7, comparison.getActualMonthlyBudget());
+            statement.setString(8, comparison.getFlag());
 
             statement.executeUpdate();
         } catch (SQLException e) {

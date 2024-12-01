@@ -85,6 +85,7 @@ public class BudgetComparisonProcessor extends KeyedBroadcastProcessFunction<Str
                         transactionDate.getYear(),
                         totalSpent,
                         budgetTillDate,
+                        budget.getMonthlyBudget(),
                         flag
                 );
 
@@ -113,6 +114,7 @@ public class BudgetComparisonProcessor extends KeyedBroadcastProcessFunction<Str
                         transactionDate.getYear(),
                         totalSpent,
                         budgetTillDate,
+                        budget.getMonthlyBudget(),
                         flag
                 );
 

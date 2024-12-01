@@ -20,6 +20,7 @@ CREATE TABLE budget_comparisons (
                                     year INT,
                                     spent_amount DOUBLE PRECISION,
                                     budget DOUBLE PRECISION,
+                                    actual_monthly_budget DOUBLE PRECISION,
                                     flag VARCHAR(10), -- Values: "OVERSPENT", "UNDERSPENT"
                                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                     UNIQUE(customer_id, category, month, year)

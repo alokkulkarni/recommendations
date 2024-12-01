@@ -16,7 +16,7 @@ public class BudgetComparisonFetcher {
     private static final Logger LOG = LoggerFactory.getLogger(BudgetComparisonFetcher.class);
 
     private static final String FETCH_QUERY =
-            "SELECT customer_id, category, month, year, spent_amount, budget, flag FROM budget_comparisons";
+            "SELECT customer_id, category, month, year, spent_amount, budget, actual_monthly_budget, flag FROM budget_comparisons";
 
     public static List<BudgetComparison> fetchBudgetComparison() {
         List<BudgetComparison> transactions = new ArrayList<>();
@@ -35,6 +35,7 @@ public class BudgetComparisonFetcher {
                         rs.getInt("year"),
                         rs.getDouble("spent_amount"),
                         rs.getDouble("budget"),
+                        rs.getDouble("actual_monthly_budget"),
                         rs.getString("flag")
                 );
                 transactions.add(transaction);
